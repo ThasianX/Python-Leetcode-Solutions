@@ -10,13 +10,14 @@ class Solution:
       while left_i < right_i:
         left_height = height[left_i]
         right_height = height[right_i]
-        max_area = max(max_area, (right_i - left_i + 1) * min(left_height, right_height))
+        max_area = max(max_area, (right_i - left_i) * min(left_height, right_height))
         
         if left_height < right_height:
           left_i += 1
         else:
           right_i -= 1
 
+      return max_area
 
 tests = [
   (
